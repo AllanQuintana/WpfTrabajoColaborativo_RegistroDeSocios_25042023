@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfLosSocios.MainWindow"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:local="clr-namespace:WpfLosSocios"
+mc:Ignorable="d"
+Title="MainWindow" Height="450" Width="800">
+    <Grid InputScope="Xml" IsEnabled="True" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+        <Label Content="Registro de Socios" HorizontalAlignment="Left" Height="50" Margin="49,-11,0,0" VerticalAlignment="Top" Width="678" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="24" Background="#FFE4E1A5"/>
+        <Label Content="RUT:" HorizontalAlignment="Left" Margin="29,85,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.45,0.967" FontWeight="Bold" Foreground="#FF1418F9"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Margin="27,132,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF1418F9"/>
+        <Label Content="Apellido:" HorizontalAlignment="Left" Margin="187,132,0,0" VerticalAlignment="Top" Foreground="#FF1418F9" FontWeight="Bold"/>
+        <Label Content="Edad:" HorizontalAlignment="Left" Margin="368,132,0,0" VerticalAlignment="Top" Foreground="#FF1418F9" FontWeight="Bold"/>
+        <Button x:Name="btnCalcular" Content="Calcular" HorizontalAlignment="Left" Margin="666,230,0,0" VerticalAlignment="Top" Click="Button_Click" Width="92" Foreground="#FF9D0EAD" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="690,289,0,0" VerticalAlignment="Top" Click="Button_Click_1" Foreground="#FF9D0EAD" FontWeight="Bold"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Margin="691,356,0,0" VerticalAlignment="Top" Click="Button_Click_2" Width="46" Foreground="#FF9D0EAD" FontWeight="Bold"/>
+        <Label Content="Total General" HorizontalAlignment="Left" Margin="15,260,0,0" VerticalAlignment="Top" Foreground="#FFEA2525" FontWeight="Bold"/>
+        <Label Content="Socios Femeninos" HorizontalAlignment="Left" Margin="14,291,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Socios Masculinos" HorizontalAlignment="Left" Margin="15,322,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Promedio Edad" HorizontalAlignment="Left" Margin="16,353,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total a Pagar" HorizontalAlignment="Left" Margin="17,384,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Total a Pagar:" HorizontalAlignment="Left" Margin="256,291,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="A Pagar por Funcionarios:" HorizontalAlignment="Left" Margin="256,320,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="A Pagar por la Empresa:" HorizontalAlignment="Left" Margin="256,347,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBox x:Name="txtRUT" HorizontalAlignment="Left" Margin="79,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtNombre_" HorizontalAlignment="Left" Margin="27,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtApellido_" HorizontalAlignment="Left" Margin="188,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEdad_" HorizontalAlignment="Left" Margin="368,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <RadioButton x:Name="rbdFemenino" Content="Femenino" HorizontalAlignment="Left" Margin="33,230,0,0" VerticalAlignment="Top" GroupName="Gènero"/>
+        <RadioButton x:Name="rbdMasculino" Content="Masculino" HorizontalAlignment="Left" Margin="175,230,0,0" VerticalAlignment="Top" GroupName="Gènero"/>
+        <CheckBox x:Name="chkTenis" Content="Tenis" HorizontalAlignment="Left" Margin="345,230,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Black"/>
+        <CheckBox x:Name="chkFùtbol" Content="Fùtbol" HorizontalAlignment="Left" Margin="472,230,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Separator HorizontalAlignment="Left" Margin="666,132,0,0" VerticalAlignment="Top"/>
+        <GroupBox HorizontalAlignment="Left" Height="14" Header="                               Gènero" Margin="27,0,0,0" VerticalAlignment="Center" Width="270" BorderBrush="#FF580F98" FontWeight="Bold"/>
+        <GroupBox HorizontalAlignment="Left" Height="14" Header="                       Actividades" Margin="319,0,0,0" VerticalAlignment="Center" Width="239" BorderBrush="#FF7E24DC" FontWeight="Bold"/>
+        <Label x:Name="lblSociosFemeninos" Content="" HorizontalAlignment="Left" Margin="126,291,0,0" VerticalAlignment="Top" Width="118"/>
+        <Label x:Name="lblSociosMasculinos" Content="" HorizontalAlignment="Left" Height="27" Margin="132,321,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblPromEdad" Content="" HorizontalAlignment="Left" Height="27" Margin="126,355,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblTotalAPagarGral" Content="" HorizontalAlignment="Left" Height="27" Margin="126,379,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblTotalAPagar" Content="" HorizontalAlignment="Left" Height="27" Margin="416,290,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblAPagarFuncionarios" Content="" HorizontalAlignment="Left" Height="27" Margin="416,319,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblAPagarEmpresa" Content="" HorizontalAlignment="Left" Height="27" Margin="416,348,0,0" VerticalAlignment="Top" Width="112"/>
+
+    </Grid>
+</Window>
